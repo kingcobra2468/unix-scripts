@@ -1,0 +1,9 @@
+SYMBOLICC LINK
+ln -s <file> <shortuct path>
+
+GET LINE NUMBER WITH SED
+
+sed -n '<linenumber>p' use -n so it doesnt print it twice
+
+USE FIND COMMAND
+find ~/ -name server.sh -type f
