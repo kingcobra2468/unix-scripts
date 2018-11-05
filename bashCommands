@@ -7,3 +7,6 @@ sed -n '<linenumber>p' use -n so it doesnt print it twice
 
 USE FIND COMMAND
 find ~/ -name server.sh -type f
+
+
+https://help.ubidots.com/developer-guides/sending-tcpudp-packets-using-netcat

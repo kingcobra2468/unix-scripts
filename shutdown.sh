@@ -1,15 +1,14 @@
 #!/bin/bash
 
 function testUp(){
-    nc -w 1  -z $1 22
+    ping -c 1 $1 > /tmp/a
     if [[ $? -eq 1 ]];
             then
-                return 1
+                echo 1
     else
-        return 0
+        echo 0
     fi
 }
-
 
 
 ips=('10.0.1.10' '10.0.1.97')
@@ -42,8 +41,11 @@ while getopts "abs" option;
         s) #servers
             for ip in ${ips[@]};
             do
-               ssh -t erik@$ip sudo shutdown -P now
-               shift 
+                if [[ $(testUp $ip) -eq 0 ]];
+                then
+                    ssh -t erik@$ip sudo shutdown -P now
+                fi
+                shift
             done
         ;;
         *)

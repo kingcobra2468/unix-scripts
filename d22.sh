@@ -1,4 +1,4 @@
-sudo ping -i 0 -s 65500 -l 1000 67.170.205.141
+sudo ping -i 0 -s 65500 -l 1000 45.28.137.4
 
 
 # -i iterval
