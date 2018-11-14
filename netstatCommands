@@ -1,1 +1,3 @@
 nc -w 0.1 -nzv 45.28.137.4 1-1023
+https://www.tecmint.com/20-netstat-commands-for-linux-network-management/
+https://www.digitalocean.com/community/tutorials/how-to-use-netcat-to-establish-and-test-tcp-and-udp-connections-on-a-vps

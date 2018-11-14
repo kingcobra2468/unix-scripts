@@ -9,4 +9,12 @@ USE FIND COMMAND
 find ~/ -name server.sh -type f
 
 
+https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches
+
 https://help.ubidots.com/developer-guides/sending-tcpudp-packets-using-netcat
+
+
+GREP MANY THINGS AT ONCE
+
+egrep 'one|two' use pipe
+ls -l | tr -s [:space:] | sort -nk 7
