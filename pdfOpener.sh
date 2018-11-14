@@ -17,7 +17,6 @@ function organizedPrint(){
 }   
 
 saveToArray
-
 while getopts "lo:" option;
     do
     case $option in
@@ -25,21 +24,17 @@ while getopts "lo:" option;
         organizedPrint
         ;;
     o)
-        case $OPTARG in
-            [0-${#choices[@]}])
-                evince $path$(echo ${choices[$userArg]} | cut -f2 -d ' ')
-                ;;
-            *)
-            if [[ $OPTARG -gt ${#choices[@]} ]];
+            if [[ $OPTARG -le ${#choices[@]} ]];
+                then
+                evince $path$(echo ${choices[$(($OPTARG-1))]} | cut -f2 -d ' ')
+                #
+            elif [[ $OPTARG -gt ${#choices[@]} ]]
                 then
                     echo "Out of Scope"
                     exit
-            
             else
                 evince $path$OPTARG
             fi
-            ;;
-        esac
     esac
 done
 
