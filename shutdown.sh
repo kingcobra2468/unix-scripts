@@ -12,7 +12,7 @@ function testUp(){
 
 
 ips=('10.0.1.10' '10.0.1.97')
-while getopts "abs" option;
+while getopts "absR" option;
     do
 
     case $option in
@@ -47,6 +47,9 @@ while getopts "abs" option;
                 fi
                 shift
             done
+        ;;
+        R)
+            shutdown -r now
         ;;
         *)
             echo "Invalid Input"
