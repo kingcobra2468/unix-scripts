@@ -14,7 +14,7 @@ function testUp(){
 ips=('10.0.1.10' '10.0.1.97')
 while getopts "absR" option;
     do
-
+        
     case $option in
         a) #all
             for ip in ${ips[@]};

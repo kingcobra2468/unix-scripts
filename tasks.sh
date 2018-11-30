@@ -41,7 +41,7 @@ case $option in
         echo $t >> $taskFile
         exit
         ;;
-    d) #servers
+    d) #remove
         t="$@"
         sed -i "$t{d}" "$taskFile"
         exit

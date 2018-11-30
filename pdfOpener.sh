@@ -26,17 +26,20 @@ while getopts "lo:" option;
     o)
             if [[ $OPTARG -le ${#choices[@]} ]];
                 then
-                evince $path$(echo ${choices[$(($OPTARG-1))]} | cut -f2 -d ' ')
+                evince $path$(echo ${choices[$(($OPTARG-1))]} | cut -f2 -d ' ') &
                 #
             elif [[ $OPTARG -gt ${#choices[@]} ]]
                 then
                     echo "Out of Scope"
                     exit
             else
-                evince $path$OPTARG
+                evince $path$OPTARG &
+                exit
             fi
     esac
 done
+
+organizedPrint
 
 
     
