@@ -4,12 +4,14 @@ if [[ $(echo "$(cat /proc/uptime | cut -f1 -d ' ') / 3600" | bc) -lt 2 ]];
     then
         exit
 else
-    python3 notification.py 60 &
-    sleep 61
-    xset dpms force off;
-    sleep 60
-    xset dpms force on
+    bash -c "/usr/bin/python3 /usr/local/bin/notification.py 60" &
+    /bin/sleep 1m
+    /usr/bin/xset dpms force off;
+    /bin/sleep 1m
+    /usr/bin/xset dpms force on
 fi
+
+
 
 
 
