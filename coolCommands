@@ -1,2 +1,3 @@
 lsmem
 du --max-depth=1 -h
+bluetoothctl
