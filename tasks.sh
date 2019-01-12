@@ -20,10 +20,9 @@ function readTask(){
     echo -e "\n"
 }
 
-
 getTask
 
-if [[ $1 == "-a" ]] || [[ $1 == "-d" ]];
+if [[ $1 == "-a" ]] || [[ $1 == "-d" ]] || [[ $1 == "-m" ]];
     then
         option=$(echo $1 | tr -d -)
         shift
@@ -45,6 +44,24 @@ case $option in
         t="$@"
         sed -i "$t{d}" "$taskFile"
         exit
+    ;;
+    m) #move task to a different num
+        if [[ "$#" -eq 2 ]];
+            then
+                line=$(awk -v where=$1 '{if(NR==where){line="print"; print $line;}}' $taskFile)
+                sed -i "$1{d}" "$taskFile" 
+                if [[ $2 -gt $(wc -l < $taskFile) ]];
+                    then 
+                        sed -i "\$a $2i$line" "$taskFile"
+                        echo "here"
+                else
+                    sed -i "$2i/ $line" "$taskFile"
+                fi
+                exit
+        else
+            echo "Missing source task and destination task"
+            exit
+        fi
     ;;
     *)       
     ;;
