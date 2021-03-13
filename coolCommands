@@ -1,6 +1,0 @@
-lsmem
-du --max-depth=1 -h
-bluetoothctl
-/run/user/1000/gvfs/
-printf GET / HTTP/1.0rnrn | nc yahoo.com 
-curl --form image=@funnyYT http://73.241.4.93/upload.php
