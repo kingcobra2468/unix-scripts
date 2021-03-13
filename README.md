@@ -1,6 +1,6 @@
 ## What is this Repo?
 
-This repo is a collection of scripts/utilities that I have made over the last 4+ years. Scripts server different perposes with some of them in despirate need of refactoring :)
+This repo is a collection of scripts/utilities that I have made over the last 3+ years. Scripts serve different purposes with some of them in dire need of refactoring :)
 
 ---
 ## Repo Schema
