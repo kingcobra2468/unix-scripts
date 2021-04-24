@@ -3,8 +3,8 @@
 # records the time on the battery since machine was booted
 
 if ! [[ -f /tmp/batstart ]];then
-	cat /sys/class/power_supply/BAT0/capacity > /tmp/batstart
-	exit
+    cat /sys/class/power_supply/BAT0/capacity > /tmp/batstart
+    exit
 fi
 
 batteryO=$(cat /tmp/batstart)

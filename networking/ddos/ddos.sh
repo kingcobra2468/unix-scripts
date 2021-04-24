@@ -4,6 +4,6 @@
 
 i=0
 while [[ $i -lt 10 ]]; do
-	. ./d22.sh &
-	i=$((i+1))
+    . ./d22.sh &
+    i=$((i+1))
 done
