@@ -4,7 +4,7 @@
 # palm contact if device has poor drivers
 
 # search term to find trackpad input devices
-declare -gr TRACKPAD_QUERY="Trackpad" # 
+declare -gr TRACKPAD_QUERY=Touchpad 
 
 # optimal device id for disabling trackpad. If not provided then it will be discovered
 # interactively based on query term
@@ -16,10 +16,13 @@ function current_state() {
 }
 
 if [[ -z $DEVICE_ID ]]; then
-    DEVICE_ID=$(xinput --list --name-only | grep Touchpad | tr -d '\n' | xargs -0 xinput list --id-only)
+    DEVICE_ID=$(xinput --list --name-only | grep $TRACKPAD_QUERY | tr -d '\n' | xargs -r -0 xinput list --id-only)
 fi 
 
-echo $DEVICE_ID
+if [[ -z $DEVICE_ID ]]; then
+    echo "Unable to toggle touchpad. Either the query was bad or the device id wasnt defined."
+    exit 1
+fi
 
 if [[ $(current_state) -eq 1 ]]; then
     xinput --disable $DEVICE_ID
