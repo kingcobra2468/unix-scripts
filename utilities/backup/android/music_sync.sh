@@ -34,7 +34,7 @@ die() {
 
 parse_params() {
     # default values of variables set from params
-    android_music_dir='~/storage/music'
+    android_music_dir=~/storage/music/*
     destination_music_dir='~/Music'
     user=
     host_address=
